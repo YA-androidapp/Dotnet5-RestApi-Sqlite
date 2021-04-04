@@ -35,6 +35,16 @@ $ make create-project
     - [http://localhost:5000/WeatherForecast/](http://localhost:5000/WeatherForecast/) JSON データ
     - [http://localhost:5000/swagger/index.html](http://localhost:5000/swagger/index.html) Swagger UI
 
+## Model
+
+```sh
+$ make create-model
+```
+
+- 動作確認
+  - [https://localhost:5001/api/Items](https://localhost:5001/api/Items)
+  - [https://localhost:5001/api/SubItems](https://localhost:5001/api/SubItems)
+
 ---
 
 Copyright (c) 2021 YA-androidapp(https://github.com/YA-androidapp) All rights reserved.
