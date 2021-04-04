@@ -24,9 +24,7 @@ $ dotnet --version
 ## Project
 
 ```sh
-$ dotnet new webapi -o . -n ItemApp
-$ dotnet dev-certs https --trust
-$ dotnet run
+$ make create-project
 ```
 
 - 動作確認
@@ -36,42 +34,6 @@ $ dotnet run
   - HTTP
     - [http://localhost:5000/WeatherForecast/](http://localhost:5000/WeatherForecast/) JSON データ
     - [http://localhost:5000/swagger/index.html](http://localhost:5000/swagger/index.html) Swagger UI
-
-## Model
-
-```sh
-$ mkdir Models
-$ touch Models/Item.cs
-$ touch Models/SubItem.cs
-$ touch Data/ItemContext.cs
-$ touch Data/SubItemContext.cs
-```
-
-```sh
-$ nano appsettings.json
-```
-
-```json
-  "ConnectionStrings": {
-    "ItemContext": "Data Source=./itemapp.db"
-  }
-```
-
-```sh
-$ dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
-$ dotnet add package Microsoft.EntityFrameworkCore.Design
-$ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
-$ dotnet add package Microsoft.EntityFrameworkCore.Sqlite
-$ dotnet tool install -g dotnet-ef
-$ dotnet tool install -g dotnet-aspnet-codegenerator
-$ dotnet aspnet-codegenerator controller -name ItemsController -async -api -m Item -dc ItemContext -outDir Controllers
-$ dotnet aspnet-codegenerator controller -name SubItemsController -async -api -m SubItem -dc SubItemContext -outDir Controllers
-$ dotnet ef migrations add Initial --context ItemContext
-$ dotnet ef migrations add Initial --context SubItemContext
-$ dotnet ef database update --context SubItemContext
-$ dotnet ef database update --context ItemContext
-$ dotnet run
-```
 
 ---
 
